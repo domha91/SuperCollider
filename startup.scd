@@ -6,6 +6,8 @@ s.options.memSize = 8192 * 16; // increase this if you get "alloc failed" messag
 
 s.options.maxNodes = 1024 * 32; // increase this if you are getting drop outs and the message "too many nodes"
 
+s.options.numWireBufs = 64 * 2; // increase this if you get "exceeded number of interconnect buffers" messages
+
 s.options.numOutputBusChannels = 2; // set this to your hardware output channel size, if necessary
 
 s.options.numInputBusChannels = 2; // set this to your hardware output channel size, if necessary
@@ -22,7 +24,8 @@ s.waitForBoot {
 ~dirt = SuperDirt(2, s); // two output channels per orbit´
 
 //lazy-load samples
-~dirt.doNotReadYet = true;
+/*~dirt.doNotReadYet = true;*/
+
 //Add your own samples here:
 ~dirt.loadSoundFiles("/home/domha91/.local/share/SuperCollider/downloaded-quarks/Dirt-Samples/*");
 
@@ -65,7 +68,7 @@ MIDIClient.init;
 //Audio from Mic
 
 
-// ~mic = {SoundIn.ar([1,1])}.play;
+~mic = {SoundIn.ar([1,1])}.play;
 
 
 //TODO: CREATE SOME SYNTHDEFS IN C:\Users\domha\AppData\Local\SuperCollider\downloaded-quarks\SuperDirt\classes\..\synths\try-load-extra-synths.scd
@@ -74,6 +77,39 @@ MIDIClient.init;
 
 //EFFECTS
 
+//TUNINGS
+// https://github.com/musikinformatik/SuperDirt/blob/develop/hacks/pitch-model-from-tidal.scd
+
+
+// if we want to pick scales and tunings by name
+// this works only when synths use \freq as argument
+(
+~dirt.orbits.do { |x|
+	var event = x.defaultParentEvent;
+	var pitchEvent = Event.partialEvents.pitchEvent.copy;
+	var scale, tuning;
+	pitchEvent.use {
+		~freq = {
+			if(~n != 0) { ~note = ~n }; // interpret n as note (might be also degree)
+			~scaleName !? {
+				scale = Scale.at(~scaleName);
+				scale !? {
+					~scale = scale;
+					~tuningName !? {
+						tuning = Tuning.at(~tuningName);
+						tuning !? { ~scale = ~scale.copy; ~scale.tuning = tuning };
+					}
+				}
+			};
+			(~midinote.value + ~ctranspose).midicps * ~harmonic;
+		};
+
+		[\freq, \midinote, \octave].do(event.removeAt(_));
+
+		event.parent = pitchEvent;
+	}
+};
+)
 
 };
 

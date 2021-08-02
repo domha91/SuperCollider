@@ -1,8 +1,5 @@
 
-// Update SuperDirt Quark
-Quarks.checkForUpdates({Quarks.install("SuperDirt", "v1.7.3"); thisProcess.recompile()})
 
-Quarks.installed
 /*
 you can record multichannel too. if you have multiple orbits, lets say 8, you can do:
 */
