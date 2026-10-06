@@ -1,0 +1,7 @@
+includePaths:
+    -   /home/domha91/.local/share/SuperCollider/downloaded-quarks/Dirt-Samples
+    -   /home/domha91/.local/share/SuperCollider/downloaded-quarks/Vowel
+    -   /home/domha91/.local/share/SuperCollider/downloaded-quarks/SuperDirt
+excludePaths:
+    []
+postInlineWarnings: false

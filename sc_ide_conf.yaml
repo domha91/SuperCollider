@@ -1,0 +1,43 @@
+IDE:
+  editor:
+    blinkDuration: 600
+    disableBlinkingCursor: false
+    font:
+      antialias: 2
+      family: DejaVu Sans Mono
+      size: 11
+    highlightBracketContents: true
+    highlightCurrentLine: false
+    inactiveEditorFadeAlpha: 64
+    indentWidth: 4
+    insertMatchingTokens: false
+    lineWrap: true
+    spaceIndent: false
+    stepForwardEvaluation: false
+    theme: dracula
+    useComboBox: false
+    useComboBoxWhenSplitting: false
+  interpreter:
+    autoStart: true
+    configFile: /home/domha91/.config/SuperCollider/sclang_conf.yaml
+    runtimeDir: ""
+    standalone: false
+  mainWindow:
+    detached: !QVariantMap
+      documents-dock: ""
+      help-dock: ""
+      post-dock: ""
+    geometry: AdnQywADAAAAAAAAAAAAIAAAB38AAAPrAAAAAAAAAEUAAAO/AAAD6wAAAAACAAAAB4AAAAAAAAAARQAAB38AAAPr
+    state: AAAA/wAAAAD9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAfsAAAAcAGQAbwBjAHUAbQBlAG4AdABzAC0AZABvAGMAawAAAAAA/////wAAAF8A////AAAAAQAAA0AAAAN1/AIAAAAC+wAAABIAaABlAGwAcAAtAGQAbwBjAGsBAAAAFgAAAcoAAABNAP////sAAAASAHAAbwBzAHQALQBkAG8AYwBrAQAAAeEAAAGqAAAATQD///8AAAQ/AAADdQAAAAEAAAACAAAAAQAAAAL8AAAAAA==
+  postWindow:
+    lineWrap: false
+    scrollback: 1000
+  recentDocuments: !QVariantList
+    - /media/projects/SuperCollider/counterpoint-engine/test.scd
+    - /media/projects/SuperCollider/Live/supercollider-config/startup.scd
+    - /home/domha91/.local/share/SuperCollider/downloaded-quarks/SuperDirt/library/mySynths.scd
+    - /home/domha91/.config/SuperCollider/startup.scd
+    - /home/domha91/.local/share/SuperCollider/downloaded-quarks/SuperDirt/synths/try-load-extra-synths.scd
+    - /home/domha91/.local/share/SuperCollider/downloaded-quarks/SuperDirt/synths/default-synths.scd
+    - /home/domha91/.local/share/SuperCollider/downloaded-quarks/SuperDirt/library/default-synths-extra.scd
+  startWithSession: last
