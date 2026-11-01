@@ -63,7 +63,7 @@
 // ============================================================
 s = Server.default;
 
-s.options.device               = "SuperCollider";
+//s.options.device               = "SuperCollider";
 s.options.sampleRate           = 48000;
 s.options.blockSize            = 256;
 s.options.numOutputBusChannels = 4;
